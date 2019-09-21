@@ -16,7 +16,7 @@ module.exports = function (ctx) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v4',
-      // 'fontawesome-v5',
+      'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
@@ -26,7 +26,9 @@ module.exports = function (ctx) {
     ],
 
     framework: {
-      // iconSet: 'ionicons-v4', // Quasar icon set
+      //iconSet: 'ionicons-v4', // Quasar icon set
+      iconSet: 'fontawesome-v5', // Quasar icon set
+
       // lang: 'de', // Quasar language pack
 
       // Possible values for "all":
@@ -54,7 +56,7 @@ module.exports = function (ctx) {
       // gzip: true,
       // analyze: true,
       // extractCSS: false,
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
       }
     },
 
@@ -120,7 +122,7 @@ module.exports = function (ctx) {
     electron: {
       // bundler: 'builder', // or 'packager'
 
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       },

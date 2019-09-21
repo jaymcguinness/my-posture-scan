@@ -1,90 +1,58 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          icon="menu"
-          aria-label="Menu"
-        />
+    <q-header
+      elevated
+      style="background-color:white"
+    >
+      <q-toolbar @click="$router.push('welcome')">
 
-        <q-toolbar-title>My Body Scan</q-toolbar-title>
+        <q-toolbar-title><img
+            src="statics/square.png"
+            style="width:60px"
+          /></q-toolbar-title>
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-2">
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://facebook.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer elevated>
-      <q-tabs v-model="tab" narrow-indicator class="bg-purple text-white shadow-2">
-        <q-tab name="mails" icon="mail" label="Mails" />
-        <q-tab name="movies" icon="movie" label="Movie" />
-        <q-tab name="alarms" icon="alarm" label="Alarm" />
-        <q-tab name="movies" icon="movie" label="Movie" />
-        <q-tab name="mails" icon="mail" label="Mails" />
+    <q-footer
+      elevated
+      style="height:80px"
+    >
+      <!-- <q-tabs
+        v-model="tab"
+        narrow-indicator
+        class="text-white shadow-2"
+      > -->
+      <q-tabs v-model="tab">
+        <q-tab
+          name="home"
+          icon="fas fa-home"
+          @click="$router.push('home')"
+        />
+        <q-tab
+          name="scan"
+          icon="fas fa-vector-square"
+          @click="$router.push('scan')"
+        />
+
+        <q-tab
+          name="results"
+          icon="fas fa-poll-h"
+          @click="$router.push('results')"
+        />
+        <q-tab
+          name="exercise"
+          icon="fas fa-walking"
+          @click="$router.push('exercises')"
+        />
+        <q-tab
+          name="profile"
+          icon="fas fa-user-md"
+          @click="$router.push('profile')"
+        />
+        <!-- removed label attr from above -->
       </q-tabs>
     </q-footer>
   </q-layout>
