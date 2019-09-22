@@ -36,6 +36,10 @@
         <splash density="port-xxxhdpi" src="res/screen/android/screen-xxxhdpi-portrait.png" />
     </platform>
     <platform name="ios">
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>need camera access to take pictures</string>
+        </edit-config>
+        <preference name="ScrollEnabled" value="true" />
         <preference name="AllowInlineMediaPlayback" value="true" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
