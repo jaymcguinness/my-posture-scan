@@ -1,12 +1,29 @@
 <template>
-  <q-page class="flex flex-center">
-    <q-card flat v-for="(image,index) in images" :key="index">
-      <q-card-section>
-        <img :src="image" />
-      </q-card-section>
-      <q-card-section>ssss</q-card-section>
-    </q-card>
-    <!-- <q-input label="Height" />
+  <q-page>
+    <q-video
+      style="height:30vh"
+      src="https://www.youtube.com/embed/PP4DtSOEUMY?controls=0&amp;start=35&amp;autoplay=true"
+    />
+
+    <div class="row q-col-gutter-sm q-ma-xs">
+      <div>
+        <h6 style="margin:0px;font-size:20px;">More workouts</h6>
+      </div>
+    </div>
+    <div class="row q-col-gutter-sm q-ma-xs">
+      <div class="col-xs-6" v-for="(image,index) in images" :key="index">
+        <q-card class="my-card">
+          <q-img :src="image">
+            <div
+              class="absolute-full text-subtitle2 flex flex-center"
+              style="font-size:14px;color:#fff;font-weight:bold;background:rgba(0,0,0,0.5)"
+            >
+              <div class="absolute-bottom" style="text-align:center">EXERCISE NAME</div>
+            </div>
+          </q-img>
+        </q-card>
+      </div>
+      <!-- <q-input label="Height" />
     <q-btn-toggle
       v-model="model"
       class="my-custom-toggle"
@@ -20,18 +37,18 @@
           {label: 'cm', value: 'one'},
           {label: 'ft & inches', value: 'two'}
         ]"
-    />-->
-
+      />-->
+    </div>
     <!-- <q-btn rounded outline color="primary">Next</q-btn> -->
   </q-page>
 </template>
 <style scoped>
 img {
-  -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(50%);
   width: 200px;
   height: 140px;
-  border-radius: 20px;
+  border-radius: 30px;
+  opacity: 0.5 !important;
+  background-color: black;
 }
 
 .q-card-section {
